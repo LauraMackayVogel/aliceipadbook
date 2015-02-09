@@ -1,0 +1,37 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" type="text/css" href="page.css" />
+	<style>
+		#background {
+			position: absolute;
+			top: -165px;
+			left: -245px;
+			-webkit-transform: scale(0.68);
+			-webkit-transition-duration: 3s;
+		}
+		
+		#background.zoomout {
+			-webkit-transform: scale(1);
+		}
+	</style>
+</head>
+<body>
+	<!-- wrap the image to prevent accidental scrolling -->
+	<div style="position: absolute; height:768px; width:1024px; overflow:hidden">
+		<img id="background" src="images/pages/3.png" />
+	</div>
+	<a class="home" href="cover.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swiperight" class="button back" href="page2.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swipeleft" class="button forward" href="page4.html" ontouchend="event.stopPropagation()"></a>
+	<div class="text">In practice, I'm learning to fouett&eacute;.</div>
+	<div class="pagenumber">3/21</div>
+</body>
+<script src="alice.js"></script>
+<script>
+	setTimeout(function() {
+		document.getElementById('background').className = "zoomout"
+	}, 2000);
+</script>
+<div style="background: url(images/pages/4.png)"></div>
+</html>

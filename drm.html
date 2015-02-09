@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            window.test = "this";
+            var i = 0;
+            setInterval(function(){
+                var iframe = document.getElementById('frame');
+                iframe.setAttribute('src',"drmframe.html#test " + (i++));
+                //iframe.setAttribute('src','drmframe.html#test');
+                //iframe.contentWindow.contentDocument.write('Hello direct content')
+                //iframe.contentWindow.postMessage(('Hello world ' + i++), 'file://');
+            }, 1000)
+            </script>
+    </head>
+    <body>
+        <!-- <iframe id="frame" sandbox="allow-scripts allow-same-origin" src="/Resources/drmframe.html"></iframe> -->
+        <iframe id="frame" sandbox="allow-scripts" src="drmframe.html"></iframe>
+        <!-- <iframe id="frame" src="http://publisher-local.inkling.com/Resources/drmframe.html"></iframe> -->
+    </body>
+</html>

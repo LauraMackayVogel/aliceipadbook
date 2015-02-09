@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" type="text/css" href="page.css" />
+	<style>
+		.dancer {
+			position: absolute;
+			left: 367px;
+			top: 81px;
+			height: 528px;
+			width: 460px;
+			background-image: url(images/pages/1pliestrip.png);
+			background-repeat: no-repeat;
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: .9s;
+		}
+		
+		.dancer.fadein {
+			opacity: 1;
+		}
+		
+		.dancer.fadeout {
+			opacity: 0;
+		}
+		
+		.dancer0 {
+			background-position: 0 0;
+		}
+				
+		.dancer1 {
+			background-position: -764px 0;
+		}
+		
+		.dancer2 {
+			background-position: -1510px 0px;
+		}
+		
+		.dancer3 {
+			background-position: -2287px 0px;
+		}
+		
+	</style>
+	<script>
+		function runonce() {
+			var i = 1;
+			function nextImage() {
+				var className = "dancer" + (i++ % 4);
+				if ( i == 5 ) {
+					clearTimeout(timeout);
+				}
+				var a = document.getElementById('dancer1');
+				var b = document.getElementById('dancer2');
+				var hidden = /fadeout/.test(a.className) ? a : b;
+				var visible = (hidden === a ? b : a);
+				hidden.className = "dancer fadein " + className;
+				visible.className = visible.className.replace("fadein","fadeout")
+			}
+			var timeout = setInterval(nextImage, 1300);
+		};
+		
+		runonce();
+		setInterval(runonce, 10000)
+		
+	</script>
+</head>
+<body style="background: url(images/pages/1.png) top left no-repeat;">
+	<div id="dancer1" class="dancer fadein dancer0"></div>
+	<div id="dancer2" class="dancer fadeout"></div>
+	<a class="home" href="cover.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swiperight" class="button back" href="dedication.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swipeleft" class="button forward" href="page2.html" ontouchend="event.stopPropagation()" ontouchend="event.stopPropagation()"></a>
+	<div class="text">Hi, I'm Alice, and I love to dance and pli&eacute;.</div>
+	<div class="pagenumber">1/21</div>
+</body>
+<script src="alice.js"></script>
+</html>

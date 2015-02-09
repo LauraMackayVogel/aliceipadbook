@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" type="text/css" href="page.css" />
+	<style>
+		.dancer {
+			position: absolute;
+			left: 340px;
+			top: 20px;
+			height: 540px;
+			width: 375px;
+			background-image: url(images/pages/19strip.png);
+			background-repeat: no-repeat;
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: .8s;
+		}
+		
+		.dancer.fadein {
+			opacity: 1;
+		}
+		
+		.dancer.fadeout {
+			opacity: 0;
+		}
+		
+		.dancer0 {
+			background-position: 9px -26px;
+			left: 220px;
+		}
+		
+		.dancer1 {
+			background-position: -502px -24px;
+		}
+		
+		.dancer2 {
+			background-position: -946px -23px;
+		}
+		
+		.dancer3 {
+			background-position: -1341px -31px;
+		}
+		
+		.dancer4 {
+			background-position: -1769px -27px;
+		}
+		
+		.dancer5 {
+			background-position: -2194px -25px;
+		}
+		
+		.dancer6 {
+			background-position: -2689px -29px;
+			left: 440px;
+		}
+				
+	</style>
+	<script>
+		var i = 1;
+		function nextImage() {
+			var className = "dancer" + (i++ % 7);
+			var a = document.getElementById('dancer1');
+			var b = document.getElementById('dancer2');
+			var hidden = /fadeout/.test(a.className) ? a : b;
+			var visible = (hidden === a ? b : a);
+			hidden.className = "dancer fadein " + className;
+			visible.className = visible.className.replace("fadein","fadeout")
+		}
+		
+		setTimeout(function() {
+			nextImage();
+			setInterval(nextImage, 1000);
+		},2500);
+	</script>
+</head>
+<body style="background: url(images/pages/19.png) top left no-repeat;">
+	<div id="dancer1" class="dancer fadein dancer0"></div>
+	<div id="dancer2" class="dancer fadeout"></div>
+	<a class="home" href="cover.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swiperight" class="button back" href="page18.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swipeleft" class="button forward" href="page20.html" ontouchend="event.stopPropagation()"></a>
+	<div class="text">Mid-fouett&eacute;, I moved with delight.</div>
+	<div class="pagenumber">19/21</div>
+</body>
+<script src="alice.js"></script>
+<div style="background: url(images/pages/20.png)"></div>
+</html>

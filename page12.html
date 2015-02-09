@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" type="text/css" href="page.css" />
+	<style>
+		.dancer {
+			position: absolute;
+			left: 300px;
+			top: 20px;
+			height: 260px;
+			width: 146px;
+			background-image: url(images/pages/12balletdancers.png);
+			background-repeat: no-repeat;
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: 1.4s;
+		}
+		
+		.dancer.fadein {
+			opacity: 1;
+		}
+		
+		.dancer.fadeout {
+			opacity: 0;
+		}
+		
+		.dancer0 {
+			background-position: -174px 0;
+		}
+		
+		.dancer1 {
+			background-position: -364px 0;
+			left: 332px;
+		}
+		
+		.dancer2 {
+			background-position: -512px 0;
+			left: 332px;
+			top: 15px;
+		}
+		
+		.dancer3 {
+			background-position: -666px 0;
+			left: 335px;
+		}
+		
+		.dancer4 {
+			background-position: -814px 0;
+			left: 335px;
+		}
+		
+		.dancer5 {
+			background-position: -967px 0;
+			left: 340px;
+		}
+		
+		.dancer6 {
+			background-position: -1158px 0;
+			left: 381px;
+		}
+	</style>
+	<script>
+		var i = 0;
+		function nextImage() {
+			var className = "dancer" + (i++ % 7);
+			var a = document.getElementById('dancer1');
+			var b = document.getElementById('dancer2');
+			var hidden = /fadeout/.test(a.className) ? a : b;
+			var visible = (hidden === a ? b : a);
+			hidden.className = "dancer fadein " + className;
+			visible.className = visible.className.replace("fadein","fadeout")
+		}
+		
+		setTimeout(function() {
+			nextImage();
+			setInterval(nextImage, 2000);
+		},1500)
+	</script>
+</head>
+<body style="background: url(images/pages/12.png) top left no-repeat; background-color: black">
+	<div id="dancer1" class="dancer fadein"></div>
+	<div id="dancer2" class="dancer fadeout"></div>
+	<a class="home" href="cover.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swiperight" class="button back" href="page11.html?reverse" ontouchend="event.stopPropagation()"></a>
+	<a id="swipeleft" class="button forward" href="page13.html" ontouchend="event.stopPropagation()"></a>
+	<div class="text">That night in bed I imagined the fouett&eacute; in my head.<br>
+		One kick, then two, with a twist and a pli&eacute; too.</div>
+	<div class="pagenumber">12/21</div>
+</body>
+<script src="alice.js"></script>
+<script>swapImages()</script>
+<div style="background: url(images/pages/13.png)"></div>
+</html>

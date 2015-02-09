@@ -1,0 +1,84 @@
+@import url("base.css");
+
+.home {
+	opacity: 0;
+	height: 0;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.2s;
+	height:78px;
+	width:78px;
+	background: url(images/buttons/homebutton.png) top left no-repeat;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 1.5s;
+}
+
+.home:active {
+	opacity: 0.4;
+}
+
+.fadeinbuttonset .home {
+	opacity: .6;
+}
+
+.button {
+	position: absolute;
+	bottom: 10px;
+	height:78px;
+	width:78px;	
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration:0.2s;
+	opacity: 1;
+}
+
+.button:active {
+	opacity: 0.4;
+}
+
+.back {
+	left: 25px;
+	background: url(images/buttons/leftarrowbutton.png) top left no-repeat;
+}
+
+.back:active {
+	/*background: url(images/buttons/leftarrowbuttontouch.png) top left no-repeat;*/
+}
+
+.forward {
+	right: 25px;
+	background: url(images/buttons/rightarrowbutton.png) top left no-repeat;
+}
+
+.forward:active {
+	/*background: url(images/buttons/rightarrowbuttontouch.png) top left no-repeat;*/
+}
+
+.text {
+	/*border: 1px solid gray;*/
+	position: absolute;
+	bottom: 20px;
+	left: 15%;
+	width: 70%;
+	height: 80px;
+	font-size: 30px;
+	color: #888;
+	line-height: 120%;
+	
+	/*align text in middle*/
+	display: -webkit-box;
+	text-align: center;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;	
+}
+
+.pagenumber {
+	position: absolute;
+	bottom: 5px;
+	left: 45%;
+	width: 10%;
+	font-size: 14px;
+	color: #888;
+	text-align: center;
+}

@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" type="text/css" href="base.css" />
+	<style>
+		.fixed {
+			position: absolute;
+		}
+		
+		.play {
+			top: 160px;
+			left: 809px;
+			background: url(images/buttons/playbutton.png) top left no-repeat;
+			width: 192px;
+			height: 148px;
+		}
+		
+		.play:active {
+			top: 150px;
+			left: 796px;
+			background: url(images/buttons/playbuttontouched.png) top left no-repeat;
+			height: 170px;
+		}
+		
+		.about {
+			top: 158px;
+			left: 65px;
+			background: url(images/buttons/aboutbutton.png) top left no-repeat;
+			width: 192px;
+			height: 148px;
+		}
+		
+		.about:active {
+			top: 148px;
+			left: 56px;
+			height: 170px;
+			background: url(images/buttons/aboutbuttontouched.png) top left no-repeat;
+		}
+	</style>
+</head>
+<body style="background: url(images/pages/cover.png) top left no-repeat; background-color: red;">
+	<a id="swipeleft" class="fixed play" href="dedication.html" ontouchend="event.stopPropagation()"></a>
+	<a id="swiperight" class="fixed about" href="about.html?reverse" ontouchend="event.stopPropagation()"></a>
+</body>
+<script src="alice.js"></script>
+</html>

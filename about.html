@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<link rel="stylesheet" type="text/css" href="base.css" />
+	<style>
+		.fixed {
+			position: absolute;
+		}
+				
+		.portrait {
+			background: url(images/pages/laura.png) top left no-repeat;
+			top: 210px;
+			left: 45px;
+			width: 261px;
+			height: 196px;
+		}
+		
+		.text {
+			top: 206px;
+			left: 353px;
+			width: 600px;
+			font-size: 22px;
+			text-align: justify;
+		}
+		
+		.dedication {
+			text-align: center;
+			top: 646px;
+			left: 30%;
+			width: 400px;
+			font-size: 18px;
+		}
+		
+		.home {
+			top: 626px;
+			left: 710px;
+			z-index: 999;
+			opacity: 1;
+			height:78px;
+			width:78px;
+			background: url(images/buttons/homebutton.png) top left no-repeat;
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: 0.2s;
+		}
+		
+		.home:active {
+			opacity: 0.6;
+		}
+	</style>
+</head>
+<body style="background: url(images/pages/about.png) top left no-repeat;">
+	<a id="swipeleft" class="fixed home" href="cover.html" ontouchend="event.stopPropagation()"></a>
+	<div class="fixed portrait"></div>
+	<div class="fixed text">
+		<u>Alice Learns to Believe</u> is an original story written and illustrated by Laura Marie 
+		Mackay. The concept and research for Alice Learns to Believe started when Laura studied 
+		Visual Communication and Child Psychology at the University of Michigan. Laura 
+		dedicates this book to her three nieces and nephew: Josie 4, Isabel 7, Sophia 9 and Nicholas 10. She currently resides 
+		in San Francisco, California.
+	</div>
+	<div class="fixed dedication">
+		Written and illustrated by Laura Marie Mackay
+		Special thanks to Brad Vogel and Mike Stoller, Jr.
+	</div>
+	
+</body>
+<script src="alice.js"></script>
+</html>

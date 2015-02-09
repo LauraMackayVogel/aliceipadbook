@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            window.addEventListener('message', function(e) {
+                                    document.getElementById('test').innerHTML = e.data;
+                                    });
+            if (window.parent.test) alert("BAD: " + window.parent.test);
+            </script>
+    </head>
+    <body>
+        <div id="test">Loading</div>
+        <script>
+            console.log("loading")
+            //window.onhashchange = (function(){
+            document.getElementById('test').innerHTML = window.location;            
+            //})
+            </script>
+    </body>
+</html>
